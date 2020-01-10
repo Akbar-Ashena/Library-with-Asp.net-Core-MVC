@@ -1,0 +1,14 @@
+C:\Users\95106860\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.0\LibraryServices.deps.json
+C:\Users\95106860\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.0\LibraryServices.dll
+C:\Users\95106860\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.0\LibraryServices.pdb
+C:\Users\95106860\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.0\LibraryData.dll
+C:\Users\95106860\source\repos\Library\LibraryServices\bin\Debug\netcoreapp3.0\LibraryData.pdb
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.csprojAssemblyReference.cache
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.AssemblyInfoInputs.cache
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.AssemblyInfo.cs
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.csproj.CopyComplete
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.dll
+C:\Users\95106860\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.pdb
+C:\Users\Arman\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.AssemblyInfoInputs.cache
+C:\Users\Arman\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.AssemblyInfo.cs
+C:\Users\Arman\source\repos\Library\LibraryServices\obj\Debug\netcoreapp3.0\LibraryServices.csprojAssemblyReference.cache

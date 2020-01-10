@@ -1,0 +1,38 @@
+﻿@model Library.Models.CheckoutModels.CheckoutModel
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+}
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Place Hold on Library Item</h2>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <p> ItemTitle="@Model.Title"</p>
+                    <img class="detailImage" src=@Model.ImageUrl />
+                </div>
+            </div>
+            <div class="col-9">
+                <p>Ther are Currently @Model.HoldCount holds in the queue for this item. </p>
+                @using (Html.BeginForm("PlaceHold", "Catalog", FormMethod.Post))
+                {
+                    @Html.HiddenFor(a => a.AssetId)
+                    <div>
+                        Please Insert A Library CardID.
+                        @Html.TextBoxFor(a => a.LibraryCardId)
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-info btn-lg">Place Hold</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

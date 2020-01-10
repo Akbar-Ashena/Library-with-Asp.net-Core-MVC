@@ -1,0 +1,120 @@
+﻿@model Library.Models.Catalog.AssetDetailModel
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="page-header clearfix detailHeading ">
+        <h2 class="text-muted">View Library Item</h2>
+
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-4">
+                <div>
+                    <img src="~/img/13.jpg" class="detailImage" />
+                </div>
+            </div>
+            <div class="col-4">
+                <p id="itemTitle">@Model.Title</p>
+                <p id="itemAuthor">@Model.AuthorOrDirector</p>
+                <p id="itemStatus">@Model.Status</p>
+                <p id="itemType">@Model.Type</p>
+                <p id="itemLocation">@Model.CurrentLocation</p>
+                @if (Model.Status == "Lost")
+                {
+                    <p> This item has been lost.It can not be checked out. </p>
+                    <p>
+                        <a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog"
+                           asp-action="MarkFound" asp-rout-id="@Model.AssetId">Mark Item Found.</a>
+                    </p>
+                }
+
+                @if (Model.Status == "Checked Out")
+                {
+                    <p id="itemPatron">Checked Out by : @Model.PatronName</p>
+                    <p>
+                        <a class="btn btn-lg btn-success" role="button" asp-controller="Catalog"
+                           asp-action="CheckIn" asp-route-id="@Model.AssetId">Check In</a>
+                    </p>
+                    <p>
+                        <a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog"
+                           asp-action="Hold" asp-route-id="@Model.AssetId">Place Hold</a>
+                    </p>
+                }
+                @if (Model.Status == "Available")
+                {
+                    <p>
+                        <a class="btn btn-lg btn-info " role="button" asp-controller="Catalog"
+                           asp-action="CheckOut" asp-route-id="@Model.AssetId">Check Out</a>
+                    </p>
+                }
+
+            </div>
+            <div class="col-4 detailInfo">
+                <table>
+                    <tr>
+                        <td class="itemLabel">ISBN:</td>
+                        <td class="itemValue">@Model.ISBN</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Call Number:</td>
+                        <td class="itemValue">@Model.DeweyCallNumber</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Replacement Cost:</td>
+                        <td class="itemValue">@Model.Cost</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Checkout History</h4>
+            <table class="table table-bordered table-hover @*table-condensed*@">
+                <thead>
+                    <tr>
+                        <th>Date Loaned</th>
+                        <th>Date Returned</th>
+                        <th>Card Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var checkOut in Model.CheckOutHistory)
+                    {
+                        <tr>
+                            <td>@checkOut.CheckedOut</td>
+                            <td>@checkOut.CheckedIn </td>
+                            <td>@checkOut.LibraryCard.Id</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <h4>Current Holds</h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Hold Placed</th>
+                        <th>Patron</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hold in @Model.CurrentHolds)
+                    {
+                        <tr>
+                            <td>@hold.HoldPlaced</td>
+                            <td>@hold.PatronName</td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
